@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .contentbox{
+            position: relative;
+            width: 800px;
+            height: 800px;
+            border:1px solid black;
+        }
+        .TabBox{
+            width: 500px;
+            height: 80px;
+            background: transparent;
+        }
+    </style>
+    <link rel="stylesheet" href="./tab/tab.css">
+</head>
+<body>
+    <ul>
+        <li route="./test.html" name="test">
+            百度
+        </li>
+        <li route="./test2.html" name="test2">
+            腾讯
+        </li>
+        <li route="./test3.html" name="test3">
+            京东
+        </li>
+        <li route="./test4.html" name="test4">
+            百度1
+        </li>
+        <li route="./test5.html" name="test5">
+            百度2
+        </li>
+        <li route="./test6.html" name="test6">
+            百度3
+        </li>
+        <li route="./test7.html" name="test7">
+            百度4
+        </li>
+    </ul>
+<div class="TabBox">
+
+</div>
+<div class="contentbox">
+
+</div>
+</body>
+<script src="./jquery-3.1.1.js"></script>
+<script src="./tab/tab.js"></script>
+<script>
+    $("li").on("click",function () {
+        var txt=$(this).html();
+//        console.log(txt);
+        $(this).JSTab({
+            txt:txt,
+            name:"name",
+            route:"route",
+            box:$(".contentbox"),
+            navBox:$(".TabBox"),
+            jsTabCall:function (){
+                console.log("...")
+            }
+        },'val');
+//        $(this).JSTab("val")
+    })
+
+</script>
+</html>
